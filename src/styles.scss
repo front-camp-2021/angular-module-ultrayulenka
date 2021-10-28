@@ -1,1 +1,56 @@
-/* You can add global styles to this file, and also import other style files */
+@use "sass:map";
+@use "./assets/scss/utils/variables.scss" as *;
+@use "./assets/scss/utils/mixins.scss" as *;
+@use "./assets/scss/utils/media-mixins.scss" as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: $font-stack;
+}
+
+body {
+    color: $font-color;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    background-color: transparent;
+}
+
+button,
+input {
+  font-family: inherit; 
+}
+
+input:focus{
+    outline: none;
+}
+
+.wrapper {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 1vh 2vh;
+    height: 100%;
+}
+
+.content {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin: 1vh 0 2vh;
+
+    @include tablet {
+        display: block;
+    }
+}
+
+
+
+
+
