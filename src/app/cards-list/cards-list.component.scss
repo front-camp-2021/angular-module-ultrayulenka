@@ -17,7 +17,7 @@
         min-width: 210px;
         display: block;
 
-        @include tablet {
+        @include desktop {
             flex: 0 0 49%;
         }
 

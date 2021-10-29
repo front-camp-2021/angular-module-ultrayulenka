@@ -2,20 +2,20 @@
     <div class="card__inner">
         <div class="card__image">
             <a href="#" class="card__link">
-                <img src="../../assets/images/apple-watch.png" alt="">
+                <img [src]="product.images[0]" [alt]="product.title">
             </a>
         </div>
         <div class="card__content">
             <div class="card__details">
                 <div class="rating">
-                    <span class="rating__value">3.4</span>
+                    <span class="rating__value">{{product.rating}}</span>
                     <div class="rating__icon">
                         <img class="rating__icon" src="../../assets/images/star.svg" alt="star">
                     </div>
                 </div>
-                <span class="card__price">$399</span>
+                <span class="card__price">${{product.price}}</span>
             </div>
-            <h2 class="card__title"><a href="#" class="card__link">Apple Watch Series 4 GPS</a></h2>
+            <h2 class="card__title"><a href="#" class="card__link">{{product.title}}</a></h2>
             <p class="card__description">Redesigned from scratch and completely revised.</p>
         </div>
     </div>

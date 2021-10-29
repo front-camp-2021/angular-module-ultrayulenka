@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Product } from '../../interfaces';
+import { products } from '../../mock-data/products';
 
 @Component({
   selector: 'app-cards-list',
@@ -6,7 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./cards-list.component.scss']
 })
 export class CardsListComponent {
+  products: Product[];
 
-  constructor() { }
+  constructor () { 
+    this.products = [...products]
+  }
 
 }
