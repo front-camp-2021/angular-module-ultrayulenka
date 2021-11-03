@@ -3,4 +3,16 @@
         <h4 class="filter-item__title">{{ filterItem.title }}</h4>
         <app-checkbox-options-list [list]="filterItem.list"></app-checkbox-options-list>
     </li>
+    <li class="filter-item" *ngFor="let slider of sliderItems">
+        <h4 class="filter-item__title">{{ slider.title }}</h4>
+        <app-double-slider 
+            [min]="slider.props.min"
+            [max]="slider.props.max"
+            [from]="slider.props.selected.from"
+            [to]="slider.props.selected.to"
+            [step]="slider.props.precision? 1 / (slider.props.precision * 10) : 1"
+            [prefix]="slider.props.prefix? slider.props.prefix : ''"
+        >
+        </app-double-slider>
+    </li>
 </ul>

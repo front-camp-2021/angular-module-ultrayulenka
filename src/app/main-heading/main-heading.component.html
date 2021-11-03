@@ -8,7 +8,7 @@
             Filters
         </h3>
         <button class="heading__show-sidebar-btn button button_small"
-            (click)="isSidebarOpen = !isSidebarOpen">
+            (click)="changeSidebarOpenStatus.emit()">
             <div class="arrows"
                 [ngClass]="{
                     arrows_left: isSidebarOpen,

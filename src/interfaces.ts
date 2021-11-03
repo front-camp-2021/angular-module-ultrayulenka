@@ -13,7 +13,20 @@ interface Filter {
     title: string
 }
 
+interface Slider {
+    min: number,
+    max: number,
+    prefix?: string,
+    selected: {
+      from: number,
+      to: number
+    },
+    precision?: number
+  }
+  
+
 export {
     Product,
-    Filter
+    Filter,
+    Slider
 }

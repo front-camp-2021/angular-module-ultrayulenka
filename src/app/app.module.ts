@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { MainHeadingComponent } from './main-heading/main-heading.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { SearchComponent } from './search/search.component';
 import { CheckboxOptionsListComponent } from './checkbox-options-list/checkbox-options-list.component';
+import { ProductsContentContainerComponent } from './products-content-container/products-content-container.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +29,15 @@ import { CheckboxOptionsListComponent } from './checkbox-options-list/checkbox-o
     MainHeadingComponent,
     PaginationComponent,
     SearchComponent,
-    CheckboxOptionsListComponent
+    CheckboxOptionsListComponent,
+    ProductsContentContainerComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxSliderModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

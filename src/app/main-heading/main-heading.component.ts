@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-main-heading',
@@ -6,13 +6,15 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./main-heading.component.scss']
 })
 export class MainHeadingComponent implements OnInit {
-  isSidebarOpen = true;
+  
   @Input() total: number = 0;
+  @Input() isSidebarOpen = false;
+
+  @Output() changeSidebarOpenStatus: EventEmitter<void> = new EventEmitter;
 
   constructor () { 
   }
 
   ngOnInit(): void {
   }
-
 }
