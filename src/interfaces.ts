@@ -4,8 +4,8 @@ interface Product {
     title: string,
     rating: number,
     price: number,
-    category: string,
-    brand: string
+    category?: string,
+    brand?: string
 }
 
 interface Filter {
