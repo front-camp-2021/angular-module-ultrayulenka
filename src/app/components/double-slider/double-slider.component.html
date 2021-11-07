@@ -1,7 +1,9 @@
 <div class="double-slider">
     <ngx-slider 
+        #slider
         [(value)]="from" 
         [(highValue)]="to" 
-        [options]="options">
+        [options]="options"
+        (userChange)="onChange(slider.value, slider.highValue)">
     </ngx-slider>
 </div>

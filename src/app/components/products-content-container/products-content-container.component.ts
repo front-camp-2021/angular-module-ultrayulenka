@@ -9,15 +9,19 @@ import { Product } from '../../../interfaces';
 })
 export class ProductsContentContainerComponent implements OnInit {
   isSidebarOpen = false;
-  products: any;
 
   constructor (private service: ElectronicsService) { }
 
   ngOnInit(): void {
-    this.service.getAllProducts()
-    .subscribe(products => {
-      this.products = [...products]
-    })
+    this.service.getFilteredProducts();
+  }
+
+  getProducts () {
+    return this.service.products;
+  }
+
+  getTotal () {
+    return this.service.totalFound;
   }
 
   onChangeSidebarOpenStatus () {

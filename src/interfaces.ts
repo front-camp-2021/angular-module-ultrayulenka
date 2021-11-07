@@ -14,6 +14,7 @@ interface Filter {
 }
 
 interface Slider {
+    title: string
     min: number,
     max: number,
     prefix?: string,

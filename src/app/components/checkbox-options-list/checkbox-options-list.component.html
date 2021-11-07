@@ -2,7 +2,14 @@
     <li class="options-list__item"
         *ngFor="let item of list">
       <div>
-        <input class="options-list__input" type="checkbox" [id]="item.value" [value]="item.value" [name]="item.title">
+        <input 
+          class="options-list__input" 
+          type="checkbox" 
+          [id]="item.value" 
+          [value]="item.value" 
+          [name]="item.title"
+          [checked]="checkIfSelected(item.value)"
+          (change)="changeChecked(item.value)">
         <label class="options-list__label" [for]="item.value">{{item.title}}</label>
       </div>
     </li>

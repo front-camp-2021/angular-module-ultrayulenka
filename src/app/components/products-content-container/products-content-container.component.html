@@ -1,6 +1,6 @@
 <app-main-heading
     (changeSidebarOpenStatus)="onChangeSidebarOpenStatus()"
-    [total]="20"
+    [total]="getTotal()"
     [isSidebarOpen]="isSidebarOpen"
 >
 </app-main-heading>
@@ -12,7 +12,7 @@
             'main_full-width': !isSidebarOpen
         }">
         <app-search></app-search>
-        <app-cards-list [products]="products"></app-cards-list>
+        <app-cards-list [products]="getProducts()"></app-cards-list>
         <app-pagination></app-pagination>
     </main>
 </div>

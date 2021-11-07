@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Options, LabelType } from '@angular-slider/ngx-slider';
+import { RangesService } from 'src/app/services/ranges.service';
+import { ElectronicsService } from 'src/app/services/electronics.service';
+import { PagesService } from 'src/app/services/pages.service';
 
 
 @Component({
@@ -9,6 +12,7 @@ import { Options, LabelType } from '@angular-slider/ngx-slider';
 })
 export class DoubleSliderComponent implements OnInit {
 
+  @Input() title : string = '';
   @Input() min : number = 0;
   @Input() max : number = 0;
   @Input() from : number = this.min;
@@ -32,7 +36,10 @@ export class DoubleSliderComponent implements OnInit {
     }
   };
 
-  constructor() { 
+  constructor (
+    private ranges: RangesService,
+    private electronics : ElectronicsService,
+    private pages : PagesService) { 
   }
 
   ngOnInit(): void {
@@ -51,6 +58,12 @@ export class DoubleSliderComponent implements OnInit {
         }
       }
     }
+  }
+
+  onChange (from : number, to: number) {
+    this.ranges.changeSelectedRange(from, to, this.title);
+    this.pages.changePage(1);
+    this.electronics.getFilteredProducts();
   }
 
 }

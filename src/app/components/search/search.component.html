@@ -1,5 +1,11 @@
 <form class="searchbar">
-    <input class="searchbar__input" type="text" placeholder="Search">
+    <input 
+        class="searchbar__input" 
+        type="text"
+        placeholder="Search"
+        [value]="search.query"
+        (keyup)="onChange(searchBar.value)"
+        #searchBar>
     <button class="searchbar__button "type="submit">
         <img class="searchbar__icon" src="../../assets/images/search.svg" alt="Search">
     </button>

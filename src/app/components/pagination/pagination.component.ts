@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ElectronicsService } from 'src/app/services/electronics.service';
+import { PagesService } from 'src/app/services/pages.service';
 
 @Component({
   selector: 'app-pagination',
@@ -6,15 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pagination.component.scss']
 })
 export class PaginationComponent implements OnInit {
-  pageIndex = 0;
-  totalPages = 0;
+  constructor (public pages: PagesService, private electronics : ElectronicsService) { }
 
-  constructor() { 
-    this.pageIndex = 3;
-    this.totalPages = 10;
-  }
-
-  ngOnInit(): void {
+  ngOnInit (): void {
   }
 
   counter (i: number) {
@@ -23,9 +19,24 @@ export class PaginationComponent implements OnInit {
 
   getClass (i: number) {
     const base = 'page-navigation__item_';
-    const modificator = i === this.pageIndex? 'current':
-                        i === this.pageIndex - 1? 'prev':
-                        i === this.pageIndex + 1? 'next': '';
+    const modificator = i === this.pages.page - 1? 'current':
+                        i === this.pages.page - 2? 'prev':
+                        i === this.pages.page? 'next': '';
     return modificator? base + modificator : ''; 
+  }
+
+  goToPrevPage () {
+    this.pages.changePage(this.pages.page - 1);
+    this.electronics.getFilteredProducts();
+  }
+
+  goToNextPage () {
+    this.pages.changePage(this.pages.page + 1);
+    this.electronics.getFilteredProducts();
+  }
+
+  changePage (index : number) {
+    this.pages.changePage(index + 1);
+    this.electronics.getFilteredProducts();
   }
 }

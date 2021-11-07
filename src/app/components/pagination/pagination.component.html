@@ -1,17 +1,17 @@
-<nav class="page-navigation" *ngIf="totalPages > 0">
+<nav class="page-navigation" *ngIf="pages.totalPages > 0">
     <a 
         class="page-navigation__page-link" 
         id="prev-page"
-        (click)="pageIndex = pageIndex - 1">
+        (click)="goToPrevPage()">
     </a>
     <ul class="page-navigation__list">
         <li class="page-navigation__item"
-            *ngFor="let item of counter(totalPages); let i = index"
+            *ngFor="let item of counter(pages.totalPages); let i = index"
             [ngClass]="getClass(i)">
             <a 
                 href="#" 
                 class="page-navigation__page-link"
-                (click)="pageIndex = i">
+                (click)="changePage(i)">
                 {{i+1}}
             </a>
         </li>
@@ -19,6 +19,6 @@
     <a 
         class="page-navigation__page-link" 
         id="next-page"
-        (click)="pageIndex = pageIndex + 1">
+        (click)="goToNextPage()">
     </a>
 </nav>
