@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ElectronicsService } from 'src/app/services/electronics.service';
 import { PagesService } from 'src/app/services/pages.service';
 import { SearchService } from 'src/app/services/search.service';
 
@@ -13,7 +12,6 @@ export class SearchComponent implements OnInit {
 
   constructor (
     public search: SearchService,
-    private electronics: ElectronicsService,
     private pages: PagesService
     
   ) { }
@@ -23,7 +21,5 @@ export class SearchComponent implements OnInit {
 
   onChange (value : string) {
     this.search.changeSearchQuery(value);
-    this.pages.changePage(1);
-    this.electronics.getFilteredProducts();
   }
 }

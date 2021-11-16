@@ -18,7 +18,8 @@ import { MainHeadingComponent } from './components/main-heading/main-heading.com
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { SearchComponent } from './components/search/search.component';
 import { CheckboxOptionsListComponent } from './components/checkbox-options-list/checkbox-options-list.component';
-import { ProductsContentContainerComponent } from './components/products-content-container/products-content-container.component';
+import { ProductsPageComponent } from './components/products-page/products-page.component';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { ProductsContentContainerComponent } from './components/products-content
     PaginationComponent,
     SearchComponent,
     CheckboxOptionsListComponent,
-    ProductsContentContainerComponent
+    ProductsPageComponent
   ],
   imports: [
     BrowserModule,

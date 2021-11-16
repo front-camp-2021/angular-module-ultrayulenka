@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +7,8 @@ export class PagesService {
   page = 1;
   totalPages = 12;
   pageLimit = 9;
+
+  pageChanged: EventEmitter<void> = new EventEmitter();
 
   constructor() { }
 
@@ -18,6 +20,8 @@ export class PagesService {
     ) return;
 
     this.page = page;
+
+    this.pageChanged.emit();
   }
 
   changeTotalPages (totalShown : number) {
@@ -27,5 +31,7 @@ export class PagesService {
   reset () {
     this.page = 1;
     this.totalPages = 12;
+
+    this.pageChanged.emit();
   }
 }

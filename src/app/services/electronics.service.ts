@@ -19,27 +19,17 @@ export class ElectronicsService {
   constructor(
     private http: HttpClient,
     private filters: FiltersService,
-    private ranges: RangesService,
+    private rangesService: RangesService,
     private search: SearchService,
     private pages: PagesService
   ) { }
 
-  getAllProducts (): void {
-    this.http.get<Product[]>(this.apiBase)
-    .subscribe(products => {
-      this.products = [...products]
-    });
+  getAllProducts (): Observable<Product[]> {
+    return this.http.get<Product[]>(this.apiBase);
   }
 
-  getFilteredProducts (): void {
-    this.http.get<Product[]>(this.apiBase, { observe: "response", params: this.prepareParams() })
-    .subscribe(response => {
-      this.totalFound = Number(response.headers.get('x-total-count'));
-      this.products = response.body? [...response.body] : [];
-      this.pages.changeTotalPages(this.totalFound);
-    }, err => {
-      throw err;
-    })
+  getFilteredProducts (): Observable<any> {
+    return this.http.get<Product[]>(this.apiBase, { observe: "response", params: this.prepareParams() })
   }
 
   prepareParams (): HttpParams {
@@ -57,11 +47,12 @@ export class ElectronicsService {
     }
 
     if(this.search.query && this.search.query.length > 0) {
+      console.log(this.search.query);
       params = params.set('q', this.search.query.toLowerCase());
     }
 
-    if(this.ranges) {
-      for(let range of Object.values(this.ranges)) {
+    if(this.rangesService) {
+      for(let range of Object.values(this.rangesService.ranges)) {
         const {
           min,
           max,

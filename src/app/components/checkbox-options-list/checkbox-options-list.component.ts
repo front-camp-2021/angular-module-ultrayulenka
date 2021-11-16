@@ -31,9 +31,6 @@ export class CheckboxOptionsListComponent implements OnInit {
     } else {
       this.filters.addFilter(value);
     }
-
-    this.pages.changePage(1);
-    this.electronics.getFilteredProducts();
   }
 
 }

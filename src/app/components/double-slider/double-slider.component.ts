@@ -62,8 +62,6 @@ export class DoubleSliderComponent implements OnInit {
 
   onChange (from : number, to: number) {
     this.ranges.changeSelectedRange(from, to, this.title);
-    this.pages.changePage(1);
-    this.electronics.getFilteredProducts();
   }
 
 }

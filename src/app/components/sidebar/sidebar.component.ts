@@ -28,6 +28,5 @@ export class SidebarComponent implements OnInit {
     this.ranges.reset();
     this.search.reset();
     this.pages.reset();
-    this.electronics.getFilteredProducts();
   }
 }

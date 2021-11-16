@@ -1,44 +1,50 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Slider } from '../../interfaces';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RangesService {
-  priceRange: Slider = {
-    title: "Price",
-    min: 0,
-    max: 85000,
-    precision: 0,
-    selected: {
-      from: 0,
-      to: 85000
+  ranges: {priceRange: Slider, ratingRange: Slider} = {
+    priceRange: {
+      title: "Price",
+      min: 0,
+      max: 85000,
+      precision: 0,
+      selected: {
+        from: 0,
+        to: 85000
+      },
+      prefix: 'UAH'
     },
-    prefix: 'UAH'
-  }
-
-  ratingRange: Slider = {
-    title: 'Rating',
-    min: 0, 
-    max: 5,
-    precision: 2,
-    selected: {
-      from: 0,
-      to: 5
+  
+    ratingRange: {
+      title: 'Rating',
+      min: 0, 
+      max: 5,
+      precision: 2,
+      selected: {
+        from: 0,
+        to: 5
+      }
     }
   }
+
+  rangesChanged: EventEmitter<void> = new EventEmitter();
 
   constructor() { }
 
   changeSelectedRange (from: number, to: number, title: string) {
     switch(title) {
       case 'Price': {
-        this.priceRange.selected = { from, to }
+        this.ranges.priceRange.selected = { from, to };
+        this.rangesChanged.emit();
         break;
       }
 
       case 'Rating': {
-        this.ratingRange.selected = { from, to }
+        this.ranges.ratingRange.selected = { from, to };
+        this.rangesChanged.emit();
         break;
       }
 
@@ -47,14 +53,16 @@ export class RangesService {
   }
 
   reset () {
-    this.priceRange.selected = {
-      from: this.priceRange.min,
-      to: this.priceRange.max
+    this.ranges.priceRange.selected = {
+      from: this.ranges.priceRange.min,
+      to: this.ranges.priceRange.max
     }
 
-    this.ratingRange.selected = {
-      from: this.ratingRange.min,
-      to: this.ratingRange.max
+    this.ranges.ratingRange.selected = {
+      from: this.ranges.ratingRange.min,
+      to: this.ranges.ratingRange.max
     }
+
+    this.rangesChanged.emit();
   }
 }
