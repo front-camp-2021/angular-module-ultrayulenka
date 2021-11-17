@@ -11,7 +11,8 @@ const routes: Routes = [
   {path: 'electronics', component: ProductsPageComponent},
   {path: 'wishlist', component: WishlistPageComponent},
   {path: 'cart', component: CartPageComponent},
-  {path: 'not-found', component: NotFoundComponent}
+  {path: 'not-found', component: NotFoundComponent},
+  {path: '**', redirectTo: '/not-found'}
 ];
 
 @NgModule({
