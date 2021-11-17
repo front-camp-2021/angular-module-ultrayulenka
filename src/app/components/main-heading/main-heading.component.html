@@ -29,7 +29,9 @@
             heading__products_closed: !isSidebarOpen
         }">
         <span class="total">{{total}} results found</span>
-        <button class="button button_small button_primary">
+        <button 
+            class="button button_small button_primary"
+            [routerLink]="['/wishlist']">
             <img class="button__icon" src="../../assets/images/heart-white.svg" alt="Go to wishlist">
         </button>
     </div>

@@ -9,7 +9,6 @@
             *ngFor="let item of counter(pages.totalPages); let i = index"
             [ngClass]="getClass(i)">
             <a 
-                href="#" 
                 class="page-navigation__page-link"
                 (click)="changePage(i)">
                 {{i+1}}

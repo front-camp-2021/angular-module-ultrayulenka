@@ -23,11 +23,16 @@ interface Slider {
       to: number
     },
     precision?: number
-  }
+}
+
+interface CartItem extends Product {
+  quantity: number
+}
   
 
 export {
     Product,
     Filter,
-    Slider
+    Slider,
+    CartItem
 }

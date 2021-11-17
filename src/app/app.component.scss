@@ -5,4 +5,6 @@
 
 .app {
     background-color: $bg-color-app;
+    max-height: 300vh;
+    min-height: 100vh;
 }

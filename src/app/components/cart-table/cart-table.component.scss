@@ -1,0 +1,58 @@
+
+
+.th_product {
+    width: 50%;
+}
+
+.th_price {
+    width: 10%;
+}
+
+.th_quantity {
+    width: 8%;
+}
+
+.th_subtotal {
+    width: 22%;
+}
+
+.th_btn {
+    width: 10%
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table th {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+th {
+    text-align: inherit;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.th_btn {
+    width: 10%;
+}
+
+tfoot {
+    border-top: 1px solid #dee2e6;
+}

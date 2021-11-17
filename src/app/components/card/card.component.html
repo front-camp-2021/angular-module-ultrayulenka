@@ -20,13 +20,13 @@
         </div>
     </div>
     <div class="card__button-group">
-        <button class="button card__button">
+        <button class="button card__button" (click)="onWishlistBtnClick()">
             <img class="button__icon" src="../../assets/images/heart-black.svg" alt="heart">
-            <span class="button__text">wishlist</span>
+            <span class="button__text">{{isInWishlist()? "remove from" : "add to"}} wishlist</span>
         </button>
-        <button class="button card__button button_primary">
+        <button class="button card__button button_primary" (click)="onCartBtnClick()">
             <img class="button__icon" src="../../assets/images/shopping-bag.svg" alt="shopping bag">
-            <span class="button__text">add to cart</span>
+            <span class="button__text">add {{isInCart()? "more" : ""}} to cart</span>
         </button>
     </div>
 </li>

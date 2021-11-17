@@ -1,0 +1,8 @@
+<div class="wishlist">
+    <button 
+        class="button button_primary button_medium"
+        (click)="resetWishlist()">
+        CLEAR ALL ITEMS
+    </button>
+    <app-cards-list [products]="getProducts()"></app-cards-list>
+</div>

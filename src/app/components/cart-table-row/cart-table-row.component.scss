@@ -1,0 +1,41 @@
+@use "../../../assets/scss/utils/media-mixins.scss" as *;
+@use '../../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@use '../../../../node_modules/font-awesome/css/font-awesome.min.css';
+
+.cart__title {
+    font-size: 16px;
+}
+
+.cart__image {
+    width: 200px;
+}
+
+td, th {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.th_product {
+    width: 50%;
+}
+
+.th_price {
+    width: 10%;
+}
+
+.th_quantity {
+    width: 8%;
+}
+
+.th_subtotal {
+    width: 22%;
+}
+
+.th_btn {
+    width: 10%
+}
+
+.text-center {
+    text-align: center !important;
+}
