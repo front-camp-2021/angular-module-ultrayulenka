@@ -1,0 +1,62 @@
+@use "../../../../assets/scss/utils/variables.scss" as *;
+@use "../../../../assets/scss/utils/mixins.scss" as *;
+@use "../../../../assets/scss/utils/media-mixins.scss" as *;
+@use "../../../../assets/scss/buttons.scss";
+
+
+.sidebar {
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1vh;
+
+        .section-title {
+            @include text(21px);
+            align-self: center;
+        }
+
+        .arrows {
+            &_down {
+                display: none;
+
+                @include tablet {
+                    display: block;
+                }
+            }
+
+            &_left {
+                @include tablet {
+                    display:none;
+                }
+            }
+
+        }
+    
+
+        @include tablet {
+            margin: 0;
+        }
+    }
+
+    &__container {
+        background-color: $bg-color-container;
+        @extend %small-shadow;
+        border-radius: 8px;
+        margin-bottom: 2vh;
+        min-height: 90%;
+    }
+
+    &__clear-button {
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__show-button {
+        @include tablet {
+            box-shadow: none;
+            background-color: transparent;
+        }
+    }
+}
