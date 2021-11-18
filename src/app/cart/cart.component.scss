@@ -1,0 +1,20 @@
+@use "../../assets/scss/utils/variables.scss" as *;
+@use "../../assets/scss/buttons.scss";
+@use '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+.cart-container {
+    padding: 20px 10px;
+}
+
+.cart {
+    font-family: $font-stack;
+
+    &__button-group {
+        display: flex;
+        justify-content: space-between;
+
+        .button {
+            border-radius: 5px;
+        }
+    }
+}

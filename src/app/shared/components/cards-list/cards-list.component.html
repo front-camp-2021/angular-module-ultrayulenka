@@ -1,0 +1,9 @@
+<ul class="cards-list">
+    <ng-container *ngIf="products.length > 0; then cards else message"></ng-container>
+    <ng-template #cards>
+        <app-card *ngFor="let product of products" [product]='product' class="cards-list__item"></app-card>
+    </ng-template>
+    <ng-template #message>
+        <li #message>No products</li>
+    </ng-template>
+</ul>

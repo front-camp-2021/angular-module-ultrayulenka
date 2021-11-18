@@ -1,0 +1,35 @@
+@use "../../../assets/scss/utils/variables.scss" as *;
+@use "../../../assets/scss/utils/mixins.scss" as *;
+@use "../../../assets/scss/utils/media-mixins.scss" as *;
+@use "../../../assets/scss/arrows.scss";
+@use "../../../assets/scss/buttons.scss";
+@use "sass:map";
+
+.nav {
+    display: flex;
+
+    &__link {
+        display: block;
+        @include text(17px, "small", "regular");
+        color: $purple-font-color;
+        margin: 0 10px;
+        align-self: flex-end;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &_current {
+            color: $font-color;
+            @extend %disabled-link;
+        }
+
+        @include mobile {
+            margin: 0 5px;
+        }
+    }
+}
+
+.home-icon {
+    height: 17px;
+}

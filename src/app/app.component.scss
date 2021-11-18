@@ -1,0 +1,10 @@
+@use "../assets/scss/utils/variables.scss" as *;
+@use "../assets/scss/utils/mixins.scss" as *;
+@use "../assets/scss/utils/media-mixins.scss" as *;
+
+
+.app {
+    background-color: $bg-color-app;
+    max-height: 300vh;
+    min-height: 100vh;
+}

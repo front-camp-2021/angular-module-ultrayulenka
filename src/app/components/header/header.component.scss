@@ -1,0 +1,55 @@
+@use "../../../assets/scss/utils/variables.scss" as *;
+@use "../../../assets/scss/utils/mixins.scss" as *;
+@use "../../../assets/scss/utils/media-mixins.scss" as *;
+@use "../../../assets/scss/arrows.scss";
+@use "../../../assets/scss/buttons.scss";
+@use "sass:map";
+
+.logo-container {
+    padding: 0 0 0 5px;
+    display: flex;
+    margin-bottom: 1.75vh;
+    justify-content: space-between;
+
+    &__item {
+        display: flex;
+    }
+}
+
+.logo {
+    margin-right: 20px;
+
+    &__icon {
+        @include tablet {
+            width: 64px;
+        }
+
+        @include mobile {
+            width: 45px;
+        }
+    }
+
+    @include mobile {
+        margin-right: 10px;
+    }
+}
+
+.title {
+    font-size: map.get($logo-font-sizes, "regular");
+    font-weight: map.get($font-weights, "bold");
+    line-height: 27px;
+    color: $purple-font-color;
+    padding-top: 20px;
+
+    @include tablet {
+        font-size: map.get($logo-font-sizes, "tablet");
+        align-self: center;
+        padding: 0;
+    }
+
+    @include mobile {
+        font-size: map.get($logo-font-sizes, "mobile");
+    }
+}
+
+

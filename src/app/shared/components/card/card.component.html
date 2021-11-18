@@ -1,0 +1,32 @@
+<li class="card">
+    <div class="card__inner">
+        <div class="card__image">
+            <a href="#" class="card__link">
+                <img [src]="product.images[0]" [alt]="product.title">
+            </a>
+        </div>
+        <div class="card__content">
+            <div class="card__details">
+                <div class="rating">
+                    <span class="rating__value">{{product.rating}}</span>
+                    <div class="rating__icon">
+                        <img class="rating__icon" src="../../assets/images/star.svg" alt="star">
+                    </div>
+                </div>
+                <span class="card__price">${{product.price}}</span>
+            </div>
+            <h2 class="card__title"><a href="#" class="card__link">{{product.title}}</a></h2>
+            <p class="card__description">Redesigned from scratch and completely revised.</p>
+        </div>
+    </div>
+    <div class="card__button-group">
+        <button class="button card__button" (click)="onWishlistBtnClick()">
+            <img class="button__icon" src="../../assets/images/heart-black.svg" alt="heart">
+            <span class="button__text">{{isInWishlist()? "remove from" : "add to"}} wishlist</span>
+        </button>
+        <button class="button card__button button_primary" (click)="onCartBtnClick()">
+            <img class="button__icon" src="../../assets/images/shopping-bag.svg" alt="shopping bag">
+            <span class="button__text">add {{isInCart()? "more" : ""}} to cart</span>
+        </button>
+    </div>
+</li>

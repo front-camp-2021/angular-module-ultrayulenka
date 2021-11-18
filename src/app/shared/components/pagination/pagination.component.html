@@ -1,0 +1,23 @@
+<nav class="page-navigation" *ngIf="pages.totalPages > 0">
+    <a 
+        class="page-navigation__page-link" 
+        id="prev-page"
+        (click)="goToPrevPage()">
+    </a>
+    <ul class="page-navigation__list">
+        <li class="page-navigation__item"
+            *ngFor="let item of counter(pages.totalPages); let i = index"
+            [ngClass]="getClass(i)">
+            <a 
+                class="page-navigation__page-link"
+                (click)="changePage(i)">
+                {{i+1}}
+            </a>
+        </li>
+    </ul>
+    <a 
+        class="page-navigation__page-link" 
+        id="next-page"
+        (click)="goToNextPage()">
+    </a>
+</nav>

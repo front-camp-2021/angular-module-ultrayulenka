@@ -1,0 +1,38 @@
+<div class="heading">
+    <div class="heading__sidebar"
+        [ngClass]="{
+            heading__sidebar_open: isSidebarOpen,
+            heading__sidebar_closed: !isSidebarOpen
+        }">
+        <h3 class="section-title">
+            Filters
+        </h3>
+        <button class="heading__show-sidebar-btn button button_small"
+            (click)="changeSidebarOpenStatus.emit()">
+            <div class="arrows"
+                [ngClass]="{
+                    arrows_left: isSidebarOpen,
+                    arrows_right: !isSidebarOpen
+                }">
+            </div>
+            <div class="arrows" 
+            [ngClass]="{
+                'arrows_up': isSidebarOpen,
+                'arrows_down': !isSidebarOpen
+            }">
+            </div>
+        </button>
+    </div>
+    <div class='heading__products'
+        [ngClass]="{
+            heading__products_open: isSidebarOpen,
+            heading__products_closed: !isSidebarOpen
+        }">
+        <span class="total">{{total}} results found</span>
+        <button 
+            class="button button_small button_primary"
+            [routerLink]="['/wishlist']">
+            <img class="button__icon" src="../../assets/images/heart-white.svg" alt="Go to wishlist">
+        </button>
+    </div>
+</div>

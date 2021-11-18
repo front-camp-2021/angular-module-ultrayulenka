@@ -1,0 +1,22 @@
+<app-products-header
+    (changeSidebarOpenStatus)="onChangeSidebarOpenStatus()"
+    [total]="totalProducts"
+    [isSidebarOpen]="isSidebarOpen"
+>
+</app-products-header>
+<div class="content">
+    <app-sidebar 
+        *ngIf="isSidebarOpen" 
+        class="sidebar"
+        (onReset)="resetAllParams()">
+    </app-sidebar>
+    <main 
+        [ngClass]="{
+            'main': isSidebarOpen,
+            'main_full-width': !isSidebarOpen
+        }">
+        <app-search></app-search>
+        <app-cards-list [products]="products"></app-cards-list>
+        <app-pagination></app-pagination>
+    </main>
+</div>

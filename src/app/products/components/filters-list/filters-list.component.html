@@ -1,0 +1,19 @@
+<ul class="filter-list">
+    <li class="filter-item" *ngFor="let filterItem of filterItems">
+        <h4 class="filter-item__title">{{ filterItem.title }}</h4>
+        <app-checkbox-options-list [list]="filterItem.list"></app-checkbox-options-list>
+    </li>
+    <li class="filter-item" *ngFor="let slider of sliderItems">
+        <h4 class="filter-item__title">{{ slider.title }}</h4>
+        <app-double-slider 
+            [title]="slider.title"
+            [min]="slider.min"
+            [max]="slider.max"
+            [from]="slider.selected.from"
+            [to]="slider.selected.to"
+            [step]="slider.precision? 1 / (slider.precision * 10) : 1"
+            [prefix]="slider.prefix? slider.prefix : ''"
+        >
+        </app-double-slider>
+    </li>
+</ul>
